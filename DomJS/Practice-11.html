@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            /* width: 100vh;
+            height: 100vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+        }
+        
+        .pink {
+            width: 500px;
+            height: 400px;
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .green {
+            width: 400px;
+            height: 300px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .blue {
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .yellow {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="pink">
+        <div class="green">
+            <div class="blue">
+                <div class="yellow"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        //Q-Write a script using the method querySelector that goes into lowest depth div and deletes it.Alternatively
+        // also write one line non recursive  solution using  querySelectorAll..
+
+        // we have three solution to perform this task..
+        let divElem = document.querySelector("div");
+        // iterative solution
+
+        // div.children  gives us HTML collection
+
+
+        // while (divElem.children.length > 0) {
+        //     divElem = divElem.children[0];
+        // }
+        // divElem.remove();
+
+
+        //  recursively method solution..
+
+        // function removeDeepest(divEle) {
+        //     if (divEle.children.length > 0) {
+        //         removeDeepest(divEle.children[0]);
+        //     } else {
+        //         divEle.remove();
+
+        //     }
+        // }
+        // removeDeepest(divElem);
+
+        // one-liner solution..
+
+        let allDivElems = document.querySelectorAll("div");
+        allDivElems[3].remove();
+    </script>
+
+
+
+</body>
+
+</html>

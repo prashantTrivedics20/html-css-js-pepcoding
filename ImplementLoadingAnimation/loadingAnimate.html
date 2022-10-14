@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            background-color: palegoldenrod;
+        }
+        
+        .balls {
+            margin-top: 20rem;
+            display: flex;
+            /* flex-flow: row wrap; */
+            /* justify-content: space-evenly; */
+            justify-content: center;
+        }
+        
+        .ball {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            /* border: none; */
+            background-color: deeppink;
+            margin: 10px;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body onload="palyloader()">
+    <a href="./redirectScreen.html"></a>
+
+    <div class="balls">
+
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+
+    <script>
+        // Q-  make a laoding Animation using  the above  5 balls and using JS...
+
+        let allballs = document.querySelectorAll(".ball");
+
+        function animateBalls(idx) {
+            idx = idx % allballs.length;
+            let curBall = allballs[idx];
+            let preBall;
+            if (idx === 0) {
+                preBall = allballs[allballs.length - 1];
+
+            } else {
+                preBall = allballs[idx - 1];
+            }
+
+
+            curBall.style.opacity = 0; // hide
+
+            preBall.style.opacity = 1; // dispaly
+
+            setTimeout(() => {
+                animateBalls(idx + 1);
+
+            }, 200)
+        }
+        animateBalls(0);
+    </script>
+
+    <script>
+        setTimeout(disable, 5000)
+
+        function disable() {
+
+        }
+    </script>
+
+
+</body>
+
+</html>

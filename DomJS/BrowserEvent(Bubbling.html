@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    .orange {
+        width: 300px;
+        height: 250px;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .blue {
+        width: 150px;
+        height: 100px;
+        background-color: rgb(0, 191, 255);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .yellow {
+        width: 100px;
+        height: 60px;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <div class="orange">
+        <div class="blue">
+            <div class="yellow"></div>
+        </div>
+    </div>
+
+    <script>
+        let orange = document.querySelector(".orange");
+        let blue = document.querySelector(".blue");
+        let yellow = document.querySelector(".yellow");
+        orange.addEventListener("click", (e) => {
+            alert("orange");
+            // alert(e.eventPhase);
+            console.log(e.target, e.currentTarget);
+
+        }, true)
+        blue.addEventListener("click", (e) => {
+            alert("blue 1");
+            // e.stopPropagation();
+            e.stopImmediatePropagation();
+
+
+        })
+        blue.addEventListener("click", (e) => {
+            alert("blue 2");
+            // e.stopPropagation();
+
+        })
+        yellow.addEventListener("click", (e) => {
+            alert("yellow");
+
+        })
+    </script>
+
+</body>
+
+</html>
+
+</html>

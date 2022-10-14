@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        div {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+
+    </div>
+
+    <script>
+        //Q-  Without  using mediaQuery do the following  things..
+
+        // 1-For desktop sizes make the background of the above div lightpink
+
+        // 1-For tablet sizes make the background of the above div lightblue
+
+        // 1-For mobile sizes make the background of the above div lightgreen.
+
+
+
+        let divEle = document.querySelector("div");
+
+        window.addEventListener("resize", (e) => {
+
+            let width = window.innerWidth;
+            if (width <= 600) {
+                divEle.style.backgroundColor = "lightgreen";
+
+            } else if (width <= 1024) {
+                divEle.style.backgroundColor = "lightblue";
+
+            } else {
+                divEle.style.backgroundColor = "lightpink";
+
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>
